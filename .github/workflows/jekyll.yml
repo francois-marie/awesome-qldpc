@@ -5,42 +5,81 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    
     steps:
-    - name: Checkout main branch first
-      uses: actions/checkout@v4
-      with:
-        ref: main
-        fetch-depth: 0
-    
-    - name: Clean workspace
-      run: |
-        rm -rf _site
-        rm -rf .jekyll-cache
-        rm -rf vendor
-    
-    - name: Setup Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.1'
-        bundler-cache: true
-    
-    - name: Clean Gemfile.lock
-      run: rm -f Gemfile.lock
-    
-    - name: Install dependencies
-      run: |
-        bundle config set --local path 'vendor/bundle'
-        bundle install
-    
-    - name: Build and deploy
-      uses: helaili/jekyll-action@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        target_branch: gh-pages
-        keep_history: true
-        jekyll_build_options: "--trace" 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install .
+
+      - name: Generate plots
+        run: |
+          python src/plot_qldpc_codes.py
+          mkdir -p assets/images
+          cp out/png/qldpc_codes_plot.png assets/images/
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          
+          # Save the current commit SHA
+          CURRENT_COMMIT=$(git rev-parse HEAD)
+          
+          # Checkout gh-pages branch, creating it if it doesn't exist
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
+            git checkout gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf .
+          fi
+          
+          # Clean the working directory
+          git rm -rf .
+          
+          # Copy the built site
+          cp -r _site/* .
+          
+          # Add .nojekyll file
+          touch .nojekyll
+          
+          # Stage and commit
+          git add -A
+          git commit -m "Deploy site from commit ${CURRENT_COMMIT}"
+          
+          # Push to gh-pages
+          git push -f origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
