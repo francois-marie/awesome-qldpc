@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+awesome_qldpc.egg-info/PKG-INFO
+awesome_qldpc.egg-info/SOURCES.txt
+awesome_qldpc.egg-info/dependency_links.txt
+awesome_qldpc.egg-info/requires.txt
+awesome_qldpc.egg-info/top_level.txt
+src/generate_readme.py
+src/plot_qldpc_codes.py
