@@ -4,13 +4,18 @@ __pycache__/
 *.pyd
 *.db
 
-venv
+venv/
+.env/
 
 .sass-cache/
+.jekyll-cache/
+.jekyll-metadata
 
 **/.DS_Store
-_site
+_site/
 
-**/*.egg-info
-
+**/*.egg-info/
 **/*.lock
+
+.bundle/
+vendor/

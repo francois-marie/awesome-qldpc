@@ -12,7 +12,6 @@ aux_links:
   "View on GitHub":
     - "https://github.com/francois-marie/awesome-qldpc"
 
-
 # Build settings
 markdown: kramdown
 sass:
@@ -22,6 +21,7 @@ sass:
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 # Just the Docs specific settings
 callouts:
@@ -75,3 +75,6 @@ gh_edit_link_text: "Edit this page on GitHub"
 gh_edit_repository: "https://github.com/francois-marie/awesome-qldpc" # the github URL for your repo
 gh_edit_branch: "main" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+# Footer content
+footer_content: "Copyright &copy; 2024 François-Marie Le Régent. Distributed under an MIT license."
