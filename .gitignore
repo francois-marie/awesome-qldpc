@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+venv
+
+.sass-cache/
+
+**/.DS_Store
+_site
+
+**/*.egg-info
+
+**/*.lock
