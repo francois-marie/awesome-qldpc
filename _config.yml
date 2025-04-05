@@ -77,4 +77,4 @@ gh_edit_branch: "main" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
 # Footer content
-footer_content: "Copyright &copy; 2024 François-Marie Le Régent. Distributed under an MIT license."
+footer_content: "Copyright &copy; 2025 François-Marie Le Régent. Distributed under an MIT license."
