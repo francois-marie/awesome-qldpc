@@ -61,6 +61,10 @@ jobs:
           TEMP_DIR=$(mktemp -d)
           cp -r _site/* "$TEMP_DIR/"
           
+          # Stash any changes including untracked files
+          git add -A
+          git stash push -u
+          
           # Clean untracked files and directories
           git clean -fdx
           
