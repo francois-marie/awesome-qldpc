@@ -22,7 +22,7 @@
   },"3": {
     "doc": "qLDPC Codes List",
     "title": "qLDPC Codes List",
-    "content": "This is a comprehensive list of all qLDPC codes in our database. | Title | n | k | d | n_a | Reference | . | ",
+    "content": "This is a comprehensive list of all qLDPC codes in our database. | Title | n | k | d | n_a | Pseudo-threshold | Decoder | Family | Reference | . | ",
     "url": "/awesome-qldpc/codes.html",
     
     "relUrl": "/codes.html"
@@ -36,7 +36,7 @@
   },"5": {
     "doc": "Home",
     "title": "qLDPC Codes Database",
-    "content": "| Title | n | k | d | n_a | Reference | . | ",
+    "content": "| Title | n | k | d | n_a | Pseudo-threshold | Decoder | Family | Reference | . | ",
     "url": "/awesome-qldpc/#qldpc-codes-database",
     
     "relUrl": "/#qldpc-codes-database"
@@ -50,7 +50,7 @@
   },"7": {
     "doc": "Home",
     "title": "Contributing",
-    "content": "To add a qLDPC code to this repository: . | Fork the repository | Add your code to the data/qldpc_codes.csv file | Submit a pull request | . Each entry should include: . | Title of the paper | Number of data qubits (n) | Number of logical qubits (k) | Code distance (d) | Number of ancilla qubits (n_a) | DOI or arXiv link | . ",
+    "content": "To add a qLDPC code to this repository: . | Fork the repository | Add your code to the data/qldpc_codes.csv file | Submit a pull request | . Each entry should include: . | Title of the paper | Number of data qubits (n) | Number of logical qubits (k) | Code distance (d) | Number of ancilla qubits (n_a) | Pseudo-threshold | Decoder type | Code family | DOI or arXiv link | . ",
     "url": "/awesome-qldpc/#contributing",
     
     "relUrl": "/#contributing"
