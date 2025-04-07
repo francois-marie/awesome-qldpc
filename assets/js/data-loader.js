@@ -26,26 +26,59 @@ function initQldpcTable(tableId, pageLength = 10) {
                 const table = $(`#${tableId}`).DataTable({
                     data: results.data,
                     columns: [
-                        { title: "Title", data: "title" },
-                        { title: "n", data: "n" },
-                        { title: "k", data: "k" },
-                        { title: "d", data: "d" },
                         { 
-                            title: "n_a", 
+                            title: "Title",
+                            data: "title"
+                        },
+                        { 
+                            title: "n",
+                            data: "n"
+                        },
+                        { 
+                            title: "k",
+                            data: "k"
+                        },
+                        { 
+                            title: "d",
+                            data: "d"
+                        },
+                        { 
+                            title: "n_a",
                             data: "n_a",
                             render: function(data) {
-                                return data || "?";
+                                return data || "?"
                             }
                         },
                         { 
-                            title: "Reference", 
+                            title: "Pseudo-threshold",
+                            data: "pseudo-threshold",
+                            render: function(data) {
+                                return data || "?"
+                            }
+                        },
+                        { 
+                            title: "Decoder",
+                            data: "decoder",
+                            render: function(data) {
+                                return data || "?"
+                            }
+                        },
+                        { 
+                            title: "Family",
+                            data: "family",
+                            render: function(data) {
+                                return data || "?"
+                            }
+                        },
+                        { 
+                            title: "Reference",
                             data: "doi",
                             render: function(data) {
                                 return data ? `<a href="${data}" target="_blank">Link</a>` : '';
                             }
                         }
                     ],
-                    responsive: true,
+                    responsive: false,
                     pageLength: pageLength,
                     order: [[1, 'desc']], // Sort by n by default
                     dom: 'Bfrtip',
