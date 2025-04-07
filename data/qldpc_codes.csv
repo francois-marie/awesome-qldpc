@@ -1,2 +1,2 @@
-n,k,d,n_a,doi,title
-144,12,12,?,https://arxiv.org/abs/2308.07915,High-threshold and low-overhead fault-tolerant quantum memory 
+n,k,d,n_a,doi,title,pseudo-threshold,decoder
+144,12,12,?,https://arxiv.org/abs/2308.07915,High-threshold and low-overhead fault-tolerant quantum memory,0.0065,BP+OSD
