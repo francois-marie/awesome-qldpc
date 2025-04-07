@@ -6,6 +6,15 @@ function initQldpcTable(tableId, pageLength = 10) {
         header: true,
         complete: function(results) {
             console.log(`Loading qLDPC codes data for ${tableId}`);
+            console.log('CSV Headers:', results.meta.fields);
+            console.log('First row:', results.data[0]);
+            
+            // Filter out empty rows
+            results.data = results.data.filter(row => 
+                row['n'] && row['n'].toString().trim() !== '' &&
+                row['k'] && row['k'].toString().trim() !== '' &&
+                row['d'] && row['d'].toString().trim() !== ''
+            );
             
             if (results.data.length === 0 || !results.data[0]) {
                 console.warn('No qLDPC codes data found');
