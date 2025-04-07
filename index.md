@@ -21,6 +21,9 @@ A curated list of Quantum Low-Density Parity-Check (qLDPC) codes from theoretica
       <th>k</th>
       <th>d</th>
       <th>n_a</th>
+      <th>Pseudo-threshold</th>
+      <th>Decoder</th>
+      <th>Family</th>
       <th>Reference</th>
     </tr>
   </thead>
@@ -46,4 +49,7 @@ Each entry should include:
 - Number of logical qubits (k)
 - Code distance (d)
 - Number of ancilla qubits (n_a)
+- Pseudo-threshold
+- Decoder type
+- Code family
 - DOI or arXiv link
