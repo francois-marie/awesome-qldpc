@@ -1,4 +1,4 @@
 n,k,d,n_a,doi,title,pseudo-threshold,decoder,family
 144,12,12,?,https://arxiv.org/abs/2308.07915,High-threshold and low-overhead fault-tolerant quantum memory,0.0065,BP+OSD,Bivariate Bicycle
-30,4,5,30,https://arxiv.org/abs/2503.22071,Quantum error correction for long chains of trapped ions,?,?,Bivariate Bicycle
-48,4,7,48,https://arxiv.org/abs/2503.22071,Quantum error correction for long chains of trapped ions,?,?,Bivariate Bicycle
+30,4,5,5,https://arxiv.org/abs/2503.22071,Quantum error correction for long chains of trapped ions,?,?,Bivariate Bicycle
+48,4,7,6,https://arxiv.org/abs/2503.22071,Quantum error correction for long chains of trapped ions,?,?,Bivariate Bicycle
